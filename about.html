@@ -1,0 +1,82 @@
+<!-- about.html -->
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>À propos | Mon Portfolio</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script defer src="script.js"></script>
+</head>
+<body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-white">
+  <!-- Navbar identique -->
+  <nav class="bg-gray-100 dark:bg-gray-800 p-4 shadow-md flex justify-between items-center">
+    <h1 class="text-2xl font-bold">MonPortfolio</h1>
+    <ul class="flex space-x-4">
+      <li><a href="index.html" class="hover:underline">Accueil</a></li>
+      <li><a href="about.html" class="hover:underline">À propos</a></li>
+      <li><a href="portfolio.html" class="hover:underline">Portfolio</a></li>
+    </ul>
+    <button id="dark-toggle" class="bg-gray-300 dark:bg-gray-600 rounded px-3 py-1">🌓</button>
+  </nav>
+
+  <!-- Présentation -->
+  <section class="p-10 text-center">
+    <img src="assets/images/profile.jpg" alt="Photo" class="mx-auto rounded-full w-40 h-40">
+    <h2 class="text-3xl font-bold mt-6">Yoenn eugene</h2>
+    <p class="mt-4 max-w-2xl mx-auto">Développeur junior en formation.</p>
+  </section>
+
+<!-- Compétences -->
+<section class="px-6 grid md:grid-cols-2 gap-8 py-10">
+  <div>
+    <h3 class="text-xl font-bold mb-4">Compétences</h3>
+
+    <div class="mb-2">Java
+      <div class="w-full bg-gray-300 rounded-full h-4">
+        <div class="bg-red-600 h-4 rounded-full w-4/5"></div>
+      </div>
+    </div>
+
+    <div class="mb-2">JavaScript
+      <div class="w-full bg-gray-300 rounded-full h-4">
+        <div class="bg-yellow-400 h-4 rounded-full w-2/5"></div>
+      </div>
+    </div>
+
+    <div class="mb-2">HTML
+      <div class="w-full bg-gray-300 rounded-full h-4">
+        <div class="bg-blue-500 h-4 rounded-full w-3/6"></div>
+      </div>
+    </div>
+
+    <div class="mb-2">CSS
+      <div class="w-full bg-gray-300 rounded-full h-4">
+        <div class="bg-indigo-500 h-4 rounded-full w-2/5"></div>
+      </div>
+    </div>
+
+    <div class="mb-2">C#
+      <div class="w-full bg-gray-300 rounded-full h-4">
+        <div class="bg-green-500 h-4 rounded-full w-2/3"></div>
+      </div>
+    </div>
+
+    <div class="mb-2">Python
+      <div class="w-full bg-gray-300 rounded-full h-4">
+        <div class="bg-purple-500 h-4 rounded-full w-2/4"></div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <h3 class="text-xl font-bold mb-4">Parcours</h3>
+    <ul class="border-l-4 border-blue-500 space-y-4 pl-4">
+      <li><strong>2021 - 2023</strong> : BTS SN option Informatique et Réseaux</li>
+      <li><strong>2023 - 2024</strong> : Bac +3 Développeur d'application Java</li>
+      <li><strong>2025 - Aujourd’hui</strong> : Master Architecte de Systèmes d’Information</li>
+    </ul>
+  </div>
+</section>
+</body>
+</html>
