@@ -5,35 +5,62 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portfolio | Mon Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
   <script defer src="script.js"></script>
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .card-hover {
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .card-hover:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.12);
+    }
+    .dark .card-hover:hover {
+      box-shadow: 0 12px 32px rgba(0,0,0,0.4);
+    }
+    #github-projects .repo-card {
+      animation: fadeInUp 0.4s ease both;
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
 </head>
-<body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-white">
-  <!-- Navbar identique -->
-  <nav class="bg-gray-100 dark:bg-gray-800 p-4 shadow-md flex justify-between items-center">
-    <h1 class="text-2xl font-bold">MonPortfolio</h1>
-    <ul class="flex space-x-4">
-      <li><a href="index.html" class="hover:underline">Accueil</a></li>
-      <li><a href="about.html" class="hover:underline">À propos</a></li>
-      <li><a href="portfolio.html" class="hover:underline">Portfolio</a></li>
+<body class="bg-gray-50 text-gray-900 dark:bg-gray-950 dark:text-white">
+  <!-- Navbar -->
+  <nav class="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 px-6 py-4 flex justify-between items-center sticky top-0 z-50 shadow-sm">
+    <h1 class="text-xl font-bold tracking-tight text-indigo-600 dark:text-indigo-400">YE<span class="text-gray-900 dark:text-white">.</span></h1>
+    <ul class="flex space-x-6 text-sm font-medium">
+      <li><a href="index.html" class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">Accueil</a></li>
+      <li><a href="about.html" class="text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors">À propos</a></li>
+      <li><a href="portfolio.html" class="text-indigo-600 dark:text-indigo-400 font-semibold">Portfolio</a></li>
     </ul>
-    <button id="dark-toggle" class="bg-gray-300 dark:bg-gray-600 rounded px-3 py-1">🌓</button>
+    <button id="dark-toggle" class="text-xl hover:scale-110 transition-transform" title="Basculer le thème">🌓</button>
   </nav>
 
-  <!-- Grille de projets -->
-  <section class="p-10 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-    <div class="bg-gray-100 dark:bg-gray-800 rounded shadow p-4">
-      <img src="assets/projects/project1.png" alt="Projet 1" class="rounded mb-4">
-      <h3 class="text-xl font-bold">Projet 1</h3>
-      <p class="text-sm">Description courte du projet.</p>
-    </div>
-    <!-- Ajouter d'autres projets ici -->
-  </section>
+  <!-- Header -->
+  <div class="bg-gradient-to-r from-indigo-600 to-blue-600 text-white py-14 px-6 text-center">
+    <h2 class="text-4xl font-extrabold">Mon Portfolio</h2>
+    <p class="mt-2 text-indigo-100">Projets personnels et académiques</p>
+  </div>
 
   <!-- Section GitHub -->
-  <section class="p-10">
-    <h2 class="text-2xl font-bold mb-6">Mes projets GitHub</h2>
-    <div id="github-projects" class="grid gap-4"></div>
+  <section class="max-w-6xl mx-auto px-6 py-14">
+    <h2 class="text-2xl font-bold mb-2 flex items-center gap-2">
+      <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+      Repositories GitHub
+    </h2>
+    <p class="text-gray-500 dark:text-gray-400 text-sm mb-8">Mes derniers projets publics</p>
+    <div id="github-projects" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <!-- Chargement... -->
+      <div class="col-span-full text-center text-gray-400 dark:text-gray-600 py-10">
+        <div class="inline-block w-6 h-6 border-2 border-indigo-400 border-t-transparent rounded-full animate-spin mb-2"></div>
+        <p class="text-sm">Chargement des repositories...</p>
+      </div>
+    </div>
   </section>
 </body>
 </html>
